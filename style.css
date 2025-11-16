@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+    color: #ff0077;
+}
+
+header {
+  background-color: #000;
+  border-bottom: 2px solid #ff0077;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  overflow: hidden;
+
+  display: flex;              /* ativa o flexbox */
+  justify-content: center;    /* centraliza horizontalmente */
+  align-items: center;        /* centraliza verticalmente */
+}
+
+/* Imagem dentro do header */
+header img {
+  width: 55%;              /* ocupa toda a largura disponível */
+  height: auto;             /* mantém proporção da imagem */
+  max-height: 270px;        /* limite opcional de altura */
+  object-fit: cover;        /* corta bordas se necessário */
+  border-radius: 0;         /* pode deixar 0 se quiser o topo quadrado */
+  display: block;           /* remove espaço branco embaixo da imagem */
+}
+
+/* Responsividade — em telas pequenas, ajusta altura */
+@media (max-width: 768px) {
+  header img {
+    max-height: 180px;      /* reduz a altura em dispositivos móveis */
+  }
+}
+
+nav {
+    text-align: center;
+    background: #111;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* sombra abaixo do menu */
+    transition: box-shadow 0.3s ease;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Item ativo */
+nav a.active {
+    color: #ff0077;
+    border-bottom: 2px solid #ff0077;
+}
+
+/* Hover com brilho e elevação */
+nav a:hover {
+    background-color: #ff0077;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 0, 119, 0.6);
+    transform: translateY(-3px);
+}
+
+
+section {
+    padding: 50px 15px;
+    text-align: center;
+}
+
+.hero {
+    background: url('back.jpg') center/cover no-repeat;
+    color: #fff;
+    padding: 120px 15px;
+    font-size: 2em;
+}
+
+.galeria-container {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.galeria-container img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform .4s;
+}
+
+.galeria-container img:hover {
+    transform: scale(1.05);
+}
+
+ul {
+    list-style: none;
+    font-size: 1.2em;
+    line-height: 2em;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 15px auto;
+    width: 80%;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    margin-top: 30px;
+}
+
+.whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #25D366;
+    padding: 16px;
+    border-radius: 50%;
+    font-size: 1.8em;
+    color: white;
+    text-decoration: none;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+/* ---- Serviços em Cards ---- */
+.servicos-grid {
+    display: grid;
+    gap: 15px;
+    max-width: 900px;
+    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.servico-card {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ff0077;
+    transition: .4s;
+}
+
+.servico-card:hover {
+    background: #ff0077;
+    color: #000;
+}
+
+/* ---- Form WhatsApp ---- */
+#form-whatsapp {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#form-whatsapp input,
+#form-whatsapp textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+#form-whatsapp button {
+    background: #ff0077;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#form-whatsapp button:hover {
+    opacity: .85;
+}
+/* ====== ESTILO GERAL ====== */
+section {
+  margin: 60px auto;
+  max-width: none;
+  background-color: #111;
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 0, 100, 0.3);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 0, 100, 0.5);
+}
+
+section h2 {
+  margin-bottom: 15px;
+  color: #ff0077;
+}
+
+section p {
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* ====== FORMULÁRIOS ====== */
+form, .form-cadastro, .form-pagamento {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
+  color: #ff0077;
+}
+
+input, select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: #222;
+  color: white;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+.linha-inputs {
+  display: flex;
+  gap: 15px;
+}
+
+button {
+  background-color: #ff0077;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff0077;
+}
+a:focus, button:focus {
+  outline: 2px solid var(--cor-principal);
+  outline-offset: 3px;
+}
+.whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+}   
+/* ======== AVALIAÇÃO ======== */
+.avaliacao, .agendamento {
+  background-color: #111;
+  color: white;
+  margin: 60px auto;
+  padding: 35px;
+  border-radius: 15px;
+  max-width: 550px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 0, 119, 0.3);
+  transition: all 0.3s ease;
+}
+
+.avaliacao:hover, .agendamento:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 0, 119, 0.5);
+}
+
+.avaliacao h2, .agendamento h2 {
+  color: #ff0077;
+  margin-bottom: 10px;
+}
+
+.avaliacao p, .agendamento p {
+  color: #ccc;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+/* ======== FORMULÁRIOS ======== */
+.form-avaliacao, .form-agendamento {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
+  color: #ff0077;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: #222;
+  color: white;
+}
+
+textarea {
+  resize: none;
+}
+
+.estrelas {
+  font-size: 2em;
+  color: #ffcc00;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+button {
+  background-color: #ff0077;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff3399;
+}
